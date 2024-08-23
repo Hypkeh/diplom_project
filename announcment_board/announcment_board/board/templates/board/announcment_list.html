@@ -1,0 +1,14 @@
+{% extends 'board/announcment_main.html' %}
+
+{% block title %}Announcment{% endblock %}
+
+
+{% block content %}
+    <h1>Announcment</h1>
+    {% for announcment in object_list %}
+    <p><a href="{% url 'announcment_detail' pk=announcment.pk %}">{{ announcment.title }}</a></p>
+    <p>-----</p>
+    {% endfor %}
+    <div style="height: 5%; width: 15%;border: 2px solid; background-color: chocolate; display: flex; justify-content: center;"><a class="nav-link" href="{% url 'main_page' %}"><strong>Ha главную</strong></a></div><br>
+    
+{% endblock %}
