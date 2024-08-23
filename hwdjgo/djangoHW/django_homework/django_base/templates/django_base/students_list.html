@@ -1,0 +1,13 @@
+{% extends 'django_base/post_main.html' %}
+
+{% block title %}Список постов{% endblock %}
+
+{% block content %}
+    <h1>Post List</h1>
+    {% for post in object_list %}
+    <p><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></p> <!-- url('post_detail', pk=post.pk) -->
+    <p>-----</p>
+    {% endfor %}
+
+    <p><a href="{% url 'post_create' %}">Создать пост</a></p>
+{% endblock %}
